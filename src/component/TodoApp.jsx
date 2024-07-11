@@ -5,18 +5,16 @@ import { useSelector } from "react-redux";
 
 const TodoApp = () => {
   const todos = useSelector((store) => store.todo.todos);
-  console.log("available in reduxstore:", todos);
 
   return (
-    <>
+    <div className="flex flex-col gap-8 items-center">
       <TaskInput />
-
       <ul>
         {todos.map((todo) => (
           <TaskList key={todo.id} todo={todo} />
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
